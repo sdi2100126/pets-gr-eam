@@ -5,35 +5,79 @@ import Sidebar from '../../components/Sidebar';
 import Footer from '../../components/Footer';
 import '../../styles/owner.css';
 
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../firebase';
+
 function ReportLostPet({ user, onLogout }) {
   const navigate = useNavigate();
+  const [isSaving, setIsSaving] = useState(false);
+
   const [formData, setFormData] = useState({
     area: '',
     date: '',
     species: [],
     characteristics: [],
     title: '',
-    description: ''
+    description: '',
   });
 
   const handleCheckbox = (field, value) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [field]: prev[field].includes(value)
-        ? prev[field].filter(item => item !== value)
-        : [...prev[field], value]
+        ? prev[field].filter((item) => item !== value)
+        : [...prev[field], value],
     }));
   };
 
-  const handleSaveDraft = () => {
-    console.log('Saved as draft:', formData);
-    navigate('/owner/lost-pets-history');
+  const saveMissing = async (state) => {
+    if (!user?.id) {
+      alert('Απαιτείται σύνδεση.');
+      return;
+    }
+
+    const location = formData.area.trim();
+    const date = formData.date;
+    const race = formData.species.join(', ');
+    const characteristic = formData.characteristics.join(', ');
+    const title = formData.title.trim();
+    const text = formData.description.trim();
+
+    if (!location || !date || !title || !text) {
+      alert('Παρακαλώ συμπληρώστε Περιοχή, Ημερομηνία, Τίτλο και Κείμενο.');
+      return;
+    }
+
+    setIsSaving(true);
+
+    try {
+      const missing_dec = {
+        location,
+        date,
+        race,
+        characteristic,
+        title,
+        text,
+        state,
+        photo: '',
+      };
+
+      await addDoc(collection(db, 'missing_dec'), {
+        ...missing_dec,
+        ownerid: user.id,
+        createdAt: serverTimestamp(),
+      });
+
+      navigate('/owner/lost-pets-history');
+    } catch (e) {
+      alert('Αποτυχία αποθήκευσης.');
+    } finally {
+      setIsSaving(false);
+    }
   };
 
-  const handleSubmit = () => {
-    console.log('Submitted:', formData);
-    navigate('/owner/lost-pets-history');
-  };
+  const handleSaveDraft = () => saveMissing('draft');
+  const handleSubmit = () => saveMissing('submitted');
 
   return (
     <div className="app-container">
@@ -54,7 +98,8 @@ function ReportLostPet({ user, onLogout }) {
                 type="text"
                 placeholder="Πχ. Παγκράτι, Αθήνα"
                 value={formData.area}
-                onChange={(e) => setFormData({...formData, area: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, area: e.target.value })}
+                disabled={isSaving}
               />
             </div>
 
@@ -63,19 +108,21 @@ function ReportLostPet({ user, onLogout }) {
               <input
                 type="date"
                 value={formData.date}
-                onChange={(e) => setFormData({...formData, date: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+                disabled={isSaving}
               />
             </div>
 
             <div className="form-group">
               <label>Είδος κατοικιδίου:</label>
               <div className="checkbox-group">
-                {['Σκύλος', 'Γάτα', 'Κουνέλι', 'Παπαγάλος', 'Άλλο'].map(species => (
+                {['Σκύλος', 'Γάτα', 'Κουνέλι', 'Παπαγάλος', 'Άλλο'].map((species) => (
                   <label key={species} className="checkbox-label">
                     <input
                       type="checkbox"
                       checked={formData.species.includes(species)}
                       onChange={() => handleCheckbox('species', species)}
+                      disabled={isSaving}
                     />
                     {species}
                   </label>
@@ -86,12 +133,13 @@ function ReportLostPet({ user, onLogout }) {
             <div className="form-group">
               <label>Ποιά χαρακτηριστικά περιγράφουν καλύτερα το κατοικίδιο σας?</label>
               <div className="checkbox-group">
-                {['Εκπαιδευμένο', 'Φιλικό', 'Επιθετικό', 'Φοβιτσιάρικο', 'Εμβολιασμένο', 'Εξωστρεφή'].map(char => (
+                {['Εκπαιδευμένο', 'Φιλικό', 'Επιθετικό', 'Φοβιτσιάρικο', 'Εμβολιασμένο', 'Εξωστρεφή'].map((char) => (
                   <label key={char} className="checkbox-label">
                     <input
                       type="checkbox"
                       checked={formData.characteristics.includes(char)}
                       onChange={() => handleCheckbox('characteristics', char)}
+                      disabled={isSaving}
                     />
                     {char}
                   </label>
@@ -105,7 +153,8 @@ function ReportLostPet({ user, onLogout }) {
                 type="text"
                 placeholder="Όνομα που περιγράφει τις ανάγκες σας σύντομα"
                 value={formData.title}
-                onChange={(e) => setFormData({...formData, title: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                disabled={isSaving}
               />
             </div>
 
@@ -115,18 +164,31 @@ function ReportLostPet({ user, onLogout }) {
                 placeholder="Περιγράψτε εδώ το αίτημα σας"
                 rows="6"
                 value={formData.description}
-                onChange={(e) => setFormData({...formData, description: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                disabled={isSaving}
               />
             </div>
 
             <div className="form-actions">
-              <button className="btn-secondary" onClick={() => navigate('/owner/dashboard')}>
+              <button
+                className="btn-secondary"
+                onClick={() => navigate('/owner/dashboard')}
+                disabled={isSaving}
+              >
                 Ακύρωση
               </button>
-              <button className="btn-secondary" onClick={handleSaveDraft}>
+              <button
+                className="btn-secondary"
+                onClick={handleSaveDraft}
+                disabled={isSaving}
+              >
                 Αποθήκευση στο Πρόχειρο
               </button>
-              <button className="btn-primary" onClick={handleSubmit}>
+              <button
+                className="btn-primary"
+                onClick={handleSubmit}
+                disabled={isSaving}
+              >
                 Οριστική Υποβολή
               </button>
             </div>

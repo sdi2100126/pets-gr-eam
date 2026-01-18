@@ -1,0 +1,234 @@
+.public-content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.info-page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.info-page-container h1 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.info-section {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.info-section h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+}
+
+.info-section ul, .info-section ol {
+  margin-left: 1.5rem;
+  line-height: 1.8;
+}
+
+.info-section li {
+  margin-bottom: 0.5rem;
+}
+
+.features-list {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.features-list li:before {
+  content: "✓ ";
+  color: #27ae60;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.action-buttons button {
+  flex: 1;
+}
+
+.search-bar-public {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-bar-public input {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.filters-public {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filters-public input,
+.filters-public select {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.vets-grid-public {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.vet-card-public {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.vet-card-public:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.vet-card-public h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.vet-card-public .rating {
+  color: #f39c12;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.vet-card-public .rating span {
+  color: #666;
+  margin-left: 0.5rem;
+}
+
+.vet-card-public .area,
+.vet-card-public .specialty {
+  margin-bottom: 0.75rem;
+  color: #555;
+}
+
+.vet-card-public .description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.login-prompt {
+  background: #e8f4f8;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.login-prompt p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.lost-pets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.lost-pet-card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.lost-pet-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.lost-pet-card h3 {
+  margin-bottom: 16px;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 8px;
+}
+
+.report-found-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.lost-pet-details {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-left: 4px solid #e74c3c;
+}
+
+.lost-pet-details h3 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 24px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.description-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.description-section strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+.description-section p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.file-name {
+  margin-top: 8px;
+  color: #27ae60;
+  font-size: 14px;
+}

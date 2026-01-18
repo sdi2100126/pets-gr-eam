@@ -1,0 +1,278 @@
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.checkbox-label:hover {
+  background-color: #f8f9fa;
+}
+
+.checkbox-label input[type="checkbox"],
+.checkbox-label input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.radio-label:hover {
+  background-color: #f8f9fa;
+}
+
+.radio-label input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.vet-profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-section {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.profile-section h3 {
+  margin-bottom: 16px;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 8px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.schedule-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.schedule-edit-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.schedule-edit-table th,
+.schedule-edit-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.schedule-edit-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.schedule-edit-table input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.review-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #3498db;
+}
+
+.review-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+.btn-large {
+  padding: 16px 32px;
+  font-size: 18px;
+  margin-top: 24px;
+}
+
+.register-pet-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.register-pet-container h2 {
+  margin-bottom: 16px;
+}
+
+.register-pet-container p {
+  margin-bottom: 32px;
+  color: #666;
+}
+
+.pet-info-readonly {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  border-left: 4px solid #3498db;
+}
+
+.pet-info-readonly h3 {
+  margin-bottom: 16px;
+  color: #2c3e50;
+}
+
+.search-section {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.search-input-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.search-input-group input {
+  flex: 1;
+}
+
+.medical-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.medical-action-card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.medical-action-card h3 {
+  margin-bottom: 16px;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 8px;
+}
+
+.average-rating {
+  font-size: 20px;
+  font-weight: 600;
+  color: #3498db;
+  margin-bottom: 24px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.review-date {
+  color: #666;
+  font-size: 14px;
+}
+
+.review-pet {
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.review-rating {
+  color: #f39c12;
+  margin-bottom: 12px;
+}
+
+.review-categories {
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.review-comment {
+  margin-top: 12px;
+}
+
+.review-comment strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.review-comment p {
+  font-style: italic;
+  color: #555;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-row .form-group {
+  margin-bottom: 0;
+}

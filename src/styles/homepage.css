@@ -1,0 +1,239 @@
+.home-main {
+  background: white;
+}
+
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  color: white;
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-list {
+  list-style: none;
+  color: white;
+  font-size: 19px;
+  line-height: 2;
+}
+
+.hero-list li::before {
+  content: "✓ ";
+  margin-right: 10px;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-pets {
+  font-size: 120px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.cta-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.cta-card {
+  background: #898282;
+  padding: 50px 40px;
+  border-radius: 8px;
+  color: white;
+  position: relative;
+}
+
+.cta-card h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.cta-card ul {
+  list-style: none;
+  margin-bottom: 40px;
+  font-size: 18px;
+  line-height: 2;
+}
+
+.cta-card .btn-primary {
+  display: block;
+  width: 304px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 32px;
+  padding: 20px 16px;
+  background-color: #5551d0;
+  color: black;
+}
+
+.title-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 60px 40px 40px;
+  text-align: center;
+}
+
+.title-section h1 {
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.faq-list {
+  max-width: 848px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.faq-item {
+  background: white;
+  padding: 12px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.faq-item summary {
+  font-size: 18px;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item summary::after {
+  content: "▼";
+  font-size: 14px;
+}
+
+.faq-item[open] summary::after {
+  content: "▲";
+}
+
+.faq-item p {
+  margin-top: 12px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.stats-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.stats-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 60px 100px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+}
+
+.stats-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.stats-subtitle {
+  font-size: 18px;
+  margin-bottom: 100px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.stat-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  color: black;
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 18px;
+}
+
+.reviews-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.review-card {
+  background: #d9d9d9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+}
+
+.review-card h3 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  text-decoration: underline;
+}
+
+.review-card p {
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .reviews-section {
+    grid-template-columns: 1fr;
+  }
+}

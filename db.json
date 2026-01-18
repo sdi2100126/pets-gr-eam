@@ -1,0 +1,302 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "role": "owner",
+      "username": "maria.p",
+      "password": "password123",
+      "email": "mariap@gmail.com",
+      "firstName": "Μαρία",
+      "lastName": "Παπαλάμπρου",
+      "phone": "694 0844581",
+      "landline": "210 7743209",
+      "afm": "176804234",
+      "amka": "10048077",
+      "doy": "ΑΓΙΑΣ ΠΑΡΑΣΚΕΥΗΣ",
+      "idNumber": "ΑΜ 123445",
+      "birthDate": "1980-04-10",
+      "address": "Σολωμού 5, Αγία Παρασκευή",
+      "postalCode": "153 41"
+    },
+    {
+      "id": 2,
+      "role": "vet",
+      "username": "eleni.p",
+      "password": "vet123",
+      "email": "epapadopoulou@vetclinic.gr",
+      "firstName": "Ελένη",
+      "lastName": "Παπαδοπούλου",
+      "phone": "210-555-1234",
+      "afm": "0238745986",
+      "gender": "Θήλη",
+      "birthDate": "1985-06-15",
+      "clinicAddress": "Μέρλα 31, Άγιοι Ανάργυροι",
+      "clinicPhone": "210-555-1234",
+      "clinicEmail": "clinic@vetclinic.gr",
+      "education": "Μεταπτυχιακό",
+      "specialty": "Παθολογία μικρών ζώων",
+      "experience": 8,
+      "services": [
+        "Εμβολιασμοί σκύλων & γατών",
+        "Στειρώσεις",
+        "Καταγραφή αριθμού μικροτσίπ",
+        "Εξέταση γενικής υγείας",
+        "Μικροεπεμβάσεις",
+        "Παρακολούθηση χρόνιων νοσημάτων"
+      ],
+      "insurance": true,
+      "cardPayment": true,
+      "rating": 4.7,
+      "reviewCount": 23
+    },
+    {
+      "id": 3,
+      "role": "vet",
+      "username": "maria.t",
+      "password": "vet456",
+      "email": "mariat@petcare.gr",
+      "firstName": "Μαρία",
+      "lastName": "Τασοπούλου",
+      "phone": "210-666-5555",
+      "afm": "1234567890",
+      "gender": "Θήλη",
+      "birthDate": "1990-03-20",
+      "clinicAddress": "Λεωφόρος Αθηνών 45, Περιστέρι",
+      "clinicPhone": "210-666-5555",
+      "clinicEmail": "info@petcare.gr",
+      "education": "Πτυχίο",
+      "specialty": "Γενική κτηνιατρική",
+      "experience": 5,
+      "services": [
+        "Εμβολιασμοί",
+        "Στειρώσεις",
+        "Grooming"
+      ],
+      "insurance": false,
+      "cardPayment": true,
+      "rating": 4.0,
+      "reviewCount": 15
+    }
+  ],
+  "pets": [
+    {
+      "id": 1,
+      "ownerId": 1,
+      "name": "ΜΑΧ",
+      "species": "Σκύλος",
+      "breed": "Γερμανικό Ποιμενικό",
+      "color": "Μαύρο",
+      "birthDate": "2020-03-10",
+      "microchip": "12131",
+      "vaccinated": true,
+      "deworming": ["Εσωτερικές", "Εξωτερικές"],
+      "surgeries": ["Στείρωση"],
+      "chronicConditions": "",
+      "comments": ""
+    },
+    {
+      "id": 2,
+      "ownerId": 1,
+      "name": "Μίνα",
+      "species": "Γάτα",
+      "breed": "Περσική",
+      "color": "Λευκό",
+      "birthDate": "2019-07-22",
+      "microchip": "98765",
+      "vaccinated": true,
+      "deworming": ["Εσωτερικές"],
+      "surgeries": [],
+      "chronicConditions": "",
+      "comments": ""
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "ownerId": 1,
+      "vetId": 2,
+      "petId": 1,
+      "date": "2025-01-20",
+      "time": "18:30",
+      "day": "Δευτέρα",
+      "reason": "Εμβολιασμός",
+      "status": "pending",
+      "location": "Μέρλα 31, Άγιοι Ανάργυροι",
+      "createdAt": "2025-01-15T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "ownerId": 1,
+      "vetId": 2,
+      "petId": 1,
+      "date": "2024-12-10",
+      "time": "10:00",
+      "day": "Τρίτη",
+      "reason": "Γενική εξέταση",
+      "status": "completed",
+      "location": "Μέρλα 31, Άγιοι Ανάργυροι",
+      "createdAt": "2024-12-05T14:30:00Z"
+    },
+    {
+      "id": 3,
+      "ownerId": 1,
+      "vetId": 3,
+      "petId": 2,
+      "date": "2024-11-25",
+      "time": "15:00",
+      "day": "Παρασκευή",
+      "reason": "Στείρωση",
+      "status": "cancelled",
+      "location": "Λεωφόρος Αθηνών 45, Περιστέρι",
+      "createdAt": "2024-11-20T09:00:00Z"
+    }
+  ],
+  "lostPets": [
+    {
+      "id": 1,
+      "ownerId": 1,
+      "petId": 1,
+      "title": "Αναζητείται κατοικίδιο",
+      "area": "Παγκράτι",
+      "date": "2024-11-20",
+      "species": ["Σκύλος"],
+      "characteristics": ["Εκπαιδευμένο", "Φιλικό", "Εμβολιασμένο"],
+      "description": "Καλησπέρα, μένουμε στο Παγκράτι και πράσφατα χάσαμε το σκύλο μας. Χρείαζόμαστε άμεσο βοήθεια για τον εντοπισμό του. Πρόκειται για ένα μαύρο γερμανικό ποιμενικό. Ακούει στο όνομα Μαξ, είναι ιδίαίτερα φιλικός και καλά εκπαιδευμένος. Παρακαλούμε όποιος τον εντοπίσει να επικοινωνήσει μαζί μας μέσω της εφαρμογής.",
+      "status": "active",
+      "views": 156,
+      "createdAt": "2024-11-20T08:00:00Z"
+    },
+    {
+      "id": 2,
+      "ownerId": 1,
+      "petId": 2,
+      "title": "Αναζητείται κατοικίδιο",
+      "area": "Παγκράτι",
+      "date": "2024-11-15",
+      "species": ["Γάτα"],
+      "characteristics": ["Φιλικό", "Εμβολιασμένο"],
+      "description": "Προσωρινή περιγραφή...",
+      "status": "draft",
+      "views": 89,
+      "createdAt": "2024-11-15T12:00:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Χάθηκε ο Μπρούνο",
+      "area": "Περιστέρι",
+      "date": "2025-11-24",
+      "species": ["Σκύλος"],
+      "breed": "Λαμπραντόρ",
+      "color": "Μαύρο",
+      "microchip": "981112223334455",
+      "ownerContact": "6948 222 899",
+      "characteristics": ["Φιλικό"],
+      "description": "Φορούσε κόκκινο λουράκι. Είναι φιλικός και πιθανό να πλησιάσει κόσμο. Έχει πρόβλημα στο πίσω πόδι (ελαφρύ κουτσαίνισμα)...",
+      "status": "active",
+      "views": 234,
+      "createdAt": "2025-11-24T07:30:00Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "vetId": 2,
+      "ownerId": 1,
+      "appointmentId": 2,
+      "petName": "Ρόκυ (Σκύλος)",
+      "rating": 5,
+      "categories": ["Συνέπεια", "Επικοινωνία", "Φιλικότητα"],
+      "comment": "Πολύ φιλική και προσεκτική με το σκύλο μου.",
+      "date": "2025-04-12",
+      "reviewerName": "Μαρία Κ."
+    },
+    {
+      "id": 2,
+      "vetId": 2,
+      "ownerId": 1,
+      "appointmentId": 2,
+      "petName": "Μίνα (Γάτα)",
+      "rating": 4,
+      "categories": ["Επικοινωνία", "Επαγγελματισμός"],
+      "comment": "Καλός επαγγελματίας, λίγο μεγάλη αναμονή.",
+      "date": "2025-03-03",
+      "reviewerName": "Νίκος Π."
+    },
+    {
+      "id": 3,
+      "vetId": 2,
+      "ownerId": 1,
+      "appointmentId": 2,
+      "petName": "Ρόκυ (Σκύλος)",
+      "rating": 5,
+      "categories": ["Συνέπεια", "Επικοινωνία", "Φιλικότητα"],
+      "comment": "Πολύ φιλική και προσεκτική με το σκύλο μου.",
+      "date": "2025-04-12",
+      "reviewerName": "Μαρία Κ."
+    },
+    {
+      "id": 4,
+      "vetId": 2,
+      "ownerId": 1,
+      "appointmentId": 2,
+      "petName": "Μίνα (Γάτα)",
+      "rating": 4,
+      "categories": ["Επικοινωνία", "Επαγγελματισμός"],
+      "comment": "Καλός επαγγελματίας, λίγο μεγάλη αναμονή.",
+      "date": "2025-03-03",
+      "reviewerName": "Νίκος Π."
+    }
+  ],
+  "medicalActions": [
+    {
+      "id": 1,
+      "vetId": 2,
+      "petId": 1,
+      "type": "Στείρωση",
+      "date": "2024-11-20",
+      "medication": "paracetamol",
+      "comments": "Η επέμβαση πραγματοποιήθηκε χωρίς επιπλοκές. Δεν παρατηρήθηκε αιμορραγία. Τα εσωτερικά ράμματα είναι απορροφήσιμα, ενώ τα εξωτερικά θα αφαιρεθούν σε 10–14 ημέρες (αν υπάρχουν).",
+      "microchip": "12131"
+    },
+    {
+      "id": 2,
+      "vetId": 2,
+      "petId": 1,
+      "type": "Εμβολιασμός",
+      "date": "2024-10-15",
+      "medication": "Εμβόλιο λύσσας",
+      "comments": "Εμβολιασμός ολοκληρώθηκε επιτυχώς. Επόμενος εμβολιασμός σε 1 έτος.",
+      "microchip": "12131"
+    },
+    {
+      "id": 3,
+      "vetId": 2,
+      "petId": 1,
+      "type": "Γενική εξέταση",
+      "date": "2024-09-10",
+      "medication": "",
+      "comments": "Το ζώο είναι σε άριστη κατάσταση. Δεν παρατηρήθηκαν προβλήματα.",
+      "microchip": "12131"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "vetId": 2,
+      "petId": 1,
+      "type": "Καταγραφή",
+      "date": "2020-03-10",
+      "location": "Αθήνα",
+      "comments": "Αρχική καταγραφή κατοικιδίου στο σύστημα"
+    },
+    {
+      "id": 2,
+      "vetId": 2,
+      "petId": 1,
+      "type": "Στείρωση",
+      "date": "2024-11-20",
+      "location": "Μέρλα 31, Άγιοι Ανάργυροι",
+      "comments": "Επέμβαση στείρωσης ολοκληρώθηκε επιτυχώς"
+    }
+  ]
+}

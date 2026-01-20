@@ -10,7 +10,7 @@ function VetProfileEdit() {
   const [formData, setFormData] = useState({
     afm: '0238745986',
     fullName: 'Ελένη Παπαδοπούλου',
-    gender: 'Θηλη',
+    gender: 'Γυναίκα',
     birthDate: '',
     phone: '',
     email: '',
